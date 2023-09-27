@@ -1,0 +1,62 @@
+﻿<Window x:Class="DeweyDirectory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeweyDirectory"
+        mc:Ignorable="d"
+        Title="Start Screen" Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        xmlns:gif ="https://github.com/XamlAnimatedGif/XamlAnimatedGif">
+    <!--Set declaration for GIF background above-->
+
+    <!--Custom grid format for item placement-->
+    <Grid Height="720" Width="1280">
+        <Image Source="Resources/wpfbg.gif"></Image>
+        <!--Set background image-->
+        <Image x:Name="image" gif:AnimationBehavior.SourceUri="Resources/wpfbg.gif" 
+               HorizontalAlignment="Left" Height="720" Width="1280"/>
+
+        <Label Content="Dewey Directory" Style="{StaticResource CrangFontStyle}" 
+               FontSize="90" Height="100" Width="1000" Margin="167,78,113,542" 
+               Foreground="White"/>
+
+        <!--Design Element - house buttons-->
+        <Rectangle HorizontalAlignment="Center" Height="157" Margin="0,545,0,0" 
+                   Stroke="White" VerticalAlignment="Top" Width="720" StrokeThickness="10"/>
+
+        <!--Custom Buttons to take user to the respective screens-->
+        <!--First Feature-->
+        <Button x:Name="bookSortBtn" Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Left" Margin="312,564,0,0" VerticalAlignment="Top" Height="120" Width="130" Click="bookSortBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Assets/bookSort.png"/>
+            </Button.Background>
+        </Button>
+        
+        <!--Second Feature-->
+        <Button x:Name="searchBtn" BorderBrush="Gray" Style="{StaticResource HoverChange}" HorizontalAlignment="Left" Margin="486,564,0,0" VerticalAlignment="Top" Height="120" Width="130">
+            <Button.Background>
+                <ImageBrush ImageSource="/Assets/searchIcon.png"/>
+            </Button.Background>
+        </Button>
+        
+        <!--Third Feature-->
+        <Button x:Name="callNumBtn" BorderBrush="Gray" Style="{StaticResource HoverChange}" HorizontalAlignment="Left" Margin="657,564,0,0" VerticalAlignment="Top" Height="120" Width="130">
+            <Button.Background>
+                <ImageBrush ImageSource="/Assets/fileIcon.png"/>
+            </Button.Background>
+        </Button>
+        
+        <!--Exit-->
+        <Button x:Name="exitBtn" Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Left" Margin="832,564,0,0" VerticalAlignment="Top" Height="120" Width="130" Click="exitBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Assets/backIconTwo.png"/>
+            </Button.Background>
+        </Button>
+
+        <Label Content="BRAYTON CHETTY ©2023" Style="{StaticResource PixeledFontStyle}" FontSize="8" Foreground="White" HorizontalAlignment="Left" Margin="1083,675,0,0" VerticalAlignment="Top"/>
+    </Grid>
+
+</Window>
