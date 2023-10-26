@@ -13,9 +13,9 @@
     <!--Set declaration for GIF background above-->
 
     <Grid Height="720" Width="1280">
-        <Image Source="Resources/rbBackGround.gif"></Image>
+        <Image Source="Resources/rbBgOne.gif" Stretch="UniformToFill"></Image>
         <!--Set background image-->
-        <Image x:Name="image" gif:AnimationBehavior.SourceUri="Resources/rbBackGround.gif" 
+        <Image x:Name="image" gif:AnimationBehavior.SourceUri="Resources/rbBgOne.gif" 
                HorizontalAlignment="Left" Height="720" Width="1280"/>
 
         <!--Design Element - House screen cutent-->
@@ -57,8 +57,8 @@
 
         <!--Rules and Score-->
         <Border BorderBrush="Black" Background="Black" Opacity="0.7" BorderThickness="1" Margin="860,50,48,53" CornerRadius="30,30,30,30">
-            <Label Foreground="White" Content="RULES" FontSize="20" 
-                   Style="{StaticResource PixeledFontStyle}" Margin="126,-1,126,550"/>
+            <Label Foreground="White" Content="RULES - REPLACING" FontSize="20" 
+                   Style="{StaticResource PixeledFontStyle}" Margin="33,-1,30,550"/>
         </Border>
 
         <!--Below Content-->

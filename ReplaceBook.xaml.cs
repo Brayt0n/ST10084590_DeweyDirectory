@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Reflection.Emit;
@@ -42,11 +43,22 @@ namespace DeweyDirectory
         public ReplaceBook()
         {
             InitializeComponent();
-
+            SetCursor();
             // when the project loads
             // then the list gets pupulated by methods below
             // on start up, disable the lisbox and the checkBtn
             OpacityStartUp();
+        }
+
+        // method to set cursor
+        private void SetCursor()
+        {
+            // variable to set cursor
+            Cursor Sword;
+
+            string cursorDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Cursors";
+            Sword = new Cursor($"{cursorDirectory}\\cursor.cur");
+            this.Cursor = Sword;
         }
 
         // method to invoke the class that generates the random call numbers
@@ -87,6 +99,9 @@ namespace DeweyDirectory
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
 
+            // stop the timer
+            timer.Stop();
+
             // close this window
             this.Close();
         }
@@ -97,7 +112,7 @@ namespace DeweyDirectory
         {
             // play button sound
             // pulls straight from debug folder
-            SoundPlayer player = new SoundPlayer(new Uri(string.Format("{0}\\Sounds\\startEffect.wav", AppDomain.CurrentDomain.BaseDirectory)).ToString());
+            SoundPlayer player = new SoundPlayer(new Uri(string.Format("{0}\\Sounds\\startSound.wav", AppDomain.CurrentDomain.BaseDirectory)).ToString());
             player.Play();
 
             // call methods
@@ -478,7 +493,7 @@ namespace DeweyDirectory
         {
             // play button sound
             // pulls straight from debug folder
-            SoundPlayer player = new SoundPlayer(new Uri(string.Format("{0}\\Sounds\\successTone.wav", AppDomain.CurrentDomain.BaseDirectory)).ToString());
+            SoundPlayer player = new SoundPlayer(new Uri(string.Format("{0}\\Sounds\\completedTask.wav", AppDomain.CurrentDomain.BaseDirectory)).ToString());
             player.Play();
 
             // stop the timer

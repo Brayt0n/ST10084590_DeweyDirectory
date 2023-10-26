@@ -42,8 +42,21 @@ namespace DeweyDirectory
         {
             timer.Stop();
 
+            // instantiate objects for both classes
             ReplaceBook rb = new ReplaceBook();
-            rb.Show();
+            IdentifyAreas ia = new IdentifyAreas();
+
+            // check logic to determine which screen to navigate to
+            if (Global.isReplaceSelected)
+            {
+                // will display replace books screen
+                rb.Show();
+            } else
+            {
+                // will display identify areas screen
+                ia.Show();
+            }
+
             this.Close();
         }
     }

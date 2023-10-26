@@ -14,7 +14,7 @@
                    Stroke="White" VerticalAlignment="Center" Width="424" StrokeThickness="10"/>
 
         <Label Foreground="White" Content="TIME'S UP!" FontSize="30" 
-                   Style="{StaticResource PixeledFontStyle}" Margin="111,71,111,333"/>
+                   Style="{StaticResource PixeledFontStyle}" Margin="120,72,133,332"/>
 
         <Label Foreground="White" Content="WOULD YOU LIKE TO RETRY?" FontSize="15" 
                    Style="{StaticResource PixeledFontStyle}" Margin="76,186,76,250"/>

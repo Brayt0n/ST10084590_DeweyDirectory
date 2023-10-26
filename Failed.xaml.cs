@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,23 @@ namespace DeweyDirectory
         public Failed()
         {
             InitializeComponent();
+            // set cursor
+            SetCursor();
+
             // subscribe the close method to the Window_Closed method
             Closed += Window_Closed;
         }
 
+        // method to set cursor
+        private void SetCursor()
+        {
+            // variable to set cursor
+            Cursor Sword;
+
+            string cursorDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Cursors";
+            Sword = new Cursor($"{cursorDirectory}\\cursor.cur");
+            this.Cursor = Sword;
+        }
         private void retryBtn_Click(object sender, RoutedEventArgs e)
         {
             // close the window and reset opacity of the Replace Books opacity back to normal

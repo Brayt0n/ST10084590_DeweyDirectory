@@ -8,9 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/completedtask.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/failtone.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/generalsound.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/newselectsound.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/openchest.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/starteffect.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/startsound.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/successtone.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/buttonsoundeffect.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("fonts/i-pixel-u.ttf")]

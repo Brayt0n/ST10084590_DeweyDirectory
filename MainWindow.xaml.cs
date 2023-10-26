@@ -1,6 +1,7 @@
 ﻿using DeweyDirectory.Properties;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -31,8 +32,11 @@ namespace DeweyDirectory
         {
             InitializeComponent();
 
+            // setup cursor
+            SetCursor();
+
             // get file path of theme
-            mp.Open(new Uri(string.Format("{0}\\deweyTheme.mp3", AppDomain.CurrentDomain.BaseDirectory)));
+            mp.Open(new Uri(string.Format("{0}\\deweyNewTheme.mp3", AppDomain.CurrentDomain.BaseDirectory)));
             // loop theme when over
             mp.MediaEnded += new EventHandler(Media_Ended);
 
@@ -40,6 +44,17 @@ namespace DeweyDirectory
             { 
                 mp.Play();
             }
+        }
+
+        // method to set cursor
+        private void SetCursor()
+        {
+            // variable to set cursor
+            Cursor Sword;
+
+            string cursorDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Cursors";
+            Sword = new Cursor($"{cursorDirectory}\\cursor.cur");
+            this.Cursor = Sword;
         }
 
         private void Media_Ended(object sender, EventArgs e)
@@ -54,7 +69,7 @@ namespace DeweyDirectory
         private void exitBtn_Click(object sender, RoutedEventArgs e)
         {
             // exit protocall for app
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void bookSortBtn_Click(object sender, RoutedEventArgs e)
@@ -62,7 +77,7 @@ namespace DeweyDirectory
             // button to direct user to the Replace Books feature -- after splash screen
             // play button sound
             // pulls straight from debug folder
-            SoundPlayer player = new SoundPlayer(new Uri(string.Format("{0}\\Sounds\\buttonSoundEffect.wav", AppDomain.CurrentDomain.BaseDirectory)).ToString());
+            SoundPlayer player = new SoundPlayer(new Uri(string.Format("{0}\\Sounds\\newSelectSound.wav", AppDomain.CurrentDomain.BaseDirectory)).ToString());
             player.Play();
             
             // create new object
@@ -82,6 +97,9 @@ namespace DeweyDirectory
             // disable window on click
             this.IsEnabled = false;
 
+            // new feature added --> need to add different logic for splash
+            Global.isReplaceSelected = true; // set to true
+
         }
 
         // timer method with variable
@@ -92,6 +110,35 @@ namespace DeweyDirectory
             timer.Interval = TimeSpan.FromSeconds(3);
             timer.Tick += new EventHandler(timer_Elapsed);
             timer.Start();
+        }
+
+        private void searchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // button to direct user to the Identify Areas feature -- after splash screen
+            // play button sound
+            // pulls straight from debug folder
+            SoundPlayer player = new SoundPlayer(new Uri(string.Format("{0}\\Sounds\\newSelectSound.wav", AppDomain.CurrentDomain.BaseDirectory)).ToString());
+            player.Play();
+
+            // create new object
+            Splash s = new Splash();
+            // show splash screen
+            s.Show();
+
+            // set opacity after splash appears
+            this.Opacity = 0.2;
+
+            // call load time method -- need this window to close after the next closes
+            LoadTime();
+
+            // stop dewey theme
+            mp.Stop();
+
+            // disable window on click
+            this.IsEnabled = false;
+
+            // set the identify areas selected to true --> so set other variable as false
+            Global.isReplaceSelected = false; 
         }
 
         void timer_Elapsed(object sender, EventArgs e)

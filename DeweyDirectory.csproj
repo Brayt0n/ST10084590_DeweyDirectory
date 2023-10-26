@@ -64,8 +64,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Achievement.xaml.cs">
+      <DependentUpon>Achievement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls.cs" />
     <Compile Include="Failed.xaml.cs">
       <DependentUpon>Failed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="IdentifyAreas.xaml.cs">
+      <DependentUpon>IdentifyAreas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewGame.xaml.cs">
+      <DependentUpon>NewGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReplaceBook.xaml.cs">
       <DependentUpon>ReplaceBook.xaml</DependentUpon>
@@ -73,7 +84,15 @@
     <Compile Include="Splash.xaml.cs">
       <DependentUpon>Splash.xaml</DependentUpon>
     </Compile>
+    <Page Include="Achievement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Failed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IdentifyAreas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,6 +108,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReplaceBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,13 +135,45 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\identifyAreasBg.gif" />
+    <Resource Include="Resources\iaBackground.gif" />
+    <Resource Include="Resources\iaBgOne.gif" />
+    <Resource Include="Resources\rbBgOne.gif" />
+    <Resource Include="Resources\iaBgTwo.gif" />
+    <Resource Include="Resources\IaBgFour.gif" />
+    <Resource Include="Assets\upArrow.png" />
+    <Resource Include="Assets\downArrow.png" />
+    <Resource Include="Resources\treasure.gif" />
+    <Resource Include="Assets\pixelChestClosed.png" />
+    <Resource Include="Assets\pixelChestOpened.png" />
+    <Resource Include="Assets\exitX.png" />
+    <Resource Include="Assets\junkBadge.jpg" />
+    <Resource Include="Assets\pixelGoblet.jpg" />
+    <Resource Include="Assets\pixelNecklace.jpg" />
+    <Resource Include="Assets\pixelSword.jpg" />
+    <Resource Include="Assets\pixelCrown.jpg" />
+    <Resource Include="Cursors\cursor.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Sounds\completedTask.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\failTone.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\generalSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sounds\newSelectSound.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\openChest.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\startEffect.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\startSound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\successTone.wav">

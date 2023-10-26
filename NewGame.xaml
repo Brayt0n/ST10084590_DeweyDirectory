@@ -1,0 +1,28 @@
+﻿<Window x:Class="DeweyDirectory.NewGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeweyDirectory"
+        mc:Ignorable="d"
+        Title="New Game" Height="500" Width="500"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="#1C1C1C">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="432" 
+                   Stroke="White" VerticalAlignment="Center" Width="424" StrokeThickness="10"/>
+
+        <Label Foreground="White" Content="NEW GAME" FontSize="30" 
+                   Style="{StaticResource PixeledFontStyle}" Margin="129,70,129,334"/>
+
+        <TextBlock Foreground="White" Text="WOULD YOU LIKE TO START A NEW GAME?" FontSize="15" 
+                   Style="{StaticResource PixeledFontStyleTb}" Margin="76,186,74,205" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <Button x:Name="yesBtn" Content="YES" HorizontalAlignment="Left" Margin="120,309,0,0" Width="110"
+            Background="Transparent" BorderThickness="3" Style="{StaticResource CustomHomeButtonStyle}" Foreground="White" Height="61" VerticalAlignment="Top" Click="yesBtn_Click"/>
+
+        <Button x:Name="noBtn" Content="NO" HorizontalAlignment="Left" Margin="260,309,0,0" Width="110"
+            Background="Transparent" BorderThickness="3" Style="{StaticResource CustomHomeButtonStyle}" Foreground="White" Height="61" VerticalAlignment="Top" Click="noBtn_Click"/>
+    </Grid>
+</Window>
